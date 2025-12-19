@@ -1,5 +1,4 @@
 
-import React from 'react'
 import TaskBoardBlocks from './components/taskblock'
 
 function App() {
