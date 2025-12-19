@@ -1,8 +1,6 @@
-import { useState } from 'react'
 
-import './App.css'
+import React from 'react'
 import TaskBoardBlocks from './components/taskblock'
-import { Route, Routes } from 'react-router'
 
 function App() {
 
@@ -12,11 +10,7 @@ function App() {
       <TaskBoardBlocks />
     </div>
 
-<div className=''>
- {/* <Routes>
-            <Route path="/TaskForm" element={<Taskform />} />
-   </Routes> */}
-</div>
+
     
     </>
   )

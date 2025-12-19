@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TaskForm = ({ editTask, onClose }: any) => {
   const [task, setTask] = useState(
@@ -46,92 +46,92 @@ const TaskForm = ({ editTask, onClose }: any) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-3">
+    <div>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-3">
+        <div className="mb-2">
+          <label className="font-semibold text-lg">Title</label>
+        </div>
 
-      <div className="mb-2">
-        <label htmlFor="" className="font-semibold text-lg ">Title</label>
+        <input
+          name="title"
+          value={task.title}
+          onChange={handleChange}
+          placeholder="Title"
+          className="w-full border border-gray-500/20 p-2"
+          required
+        />
 
-      </div>
-      <input
-        name="title"
-        value={task.title}
-        onChange={handleChange}
-        placeholder="Title"
-        className="w-full border border-gray-500/20 p-2"
-        required
-      />
+        <div className="mb-2">
+          <label className="font-semibold text-lg">Description</label>
+        </div>
 
-      <div className="mb-2">
-        <label htmlFor="" className="font-semibold text-lg ">Description</label>
+        <textarea
+          name="description"
+          value={task.description}
+          onChange={handleChange}
+          placeholder="Description"
+          className="w-full border border-gray-500/20 p-2"
+        />
 
-      </div>
+        <div className="mb-2">
+          <label className="font-semibold text-lg font-mono">Status</label>
+        </div>
 
-      <textarea
-        name="description"
-        value={task.description}
-        onChange={handleChange}
-        placeholder="Description"
-        className="w-full border border-gray-500/20 p-2"
-      />
-      <div className="mb-2">
-        <label htmlFor="" className="font-semibold text-lg font-mono">Status</label>
+        <select
+          name="status"
+          value={task.status}
+          onChange={handleChange}
+          className="w-full border border-gray-500/20 p-2"
+        >
+          <option>Backlog</option>
+          <option>In Progress</option>
+          <option>Done</option>
+        </select>
 
-      </div>
+        <div className="mb-2">
+          <label className="font-semibold text-lg">Priority</label>
+        </div>
 
-      <select
-        name="status"
-        value={task.status}
-        onChange={handleChange}
-        className="w-full border border-gray-500/20 p-2 "
-      >
-        <option>Backlog</option>
-        <option>In Progress</option>
-        <option>Done</option>
-      </select>
-      <div className="mb-2">
-        <label htmlFor="" className="font-semibold text-lg ">Priority</label>
+        <select
+          name="priority"
+          value={task.priority}
+          onChange={handleChange}
+          className="w-full border border-gray-500/20 p-2"
+        >
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
 
-      </div>
+        <div className="mb-2">
+          <label className="font-semibold text-lg">Assignee</label>
+        </div>
 
-      <select
-        name="priority"
-        value={task.priority}
-        onChange={handleChange}
-        className="w-full border border-gray-500/20 p-2"
-      >
-        <option>Low</option>
-        <option>Medium</option>
-        <option>High</option>
-      </select>
-      <div className="mb-2">
-        <label htmlFor="" className="font-semibold text-lg ">Assignee</label>
+        <input
+          name="assignee"
+          value={task.assignee}
+          onChange={handleChange}
+          placeholder="Assignee"
+          className="w-full border border-gray-500/20 p-2"
+        />
 
-      </div>
+        <div className="mb-2">
+          <label className="font-semibold text-lg">Tags</label>
+        </div>
 
-      <input
-        name="assignee"
-        value={task.assignee}
-        onChange={handleChange}
-        placeholder="Assignee"
-        className="w-full border border-gray-500/20 p-2"
-      />
-      <div className="mb-2">
-        <label htmlFor="" className="font-semibold text-lg ">Tags</label>
+        <input
+          name="tags"
+          value={task.tags}
+          onChange={handleChange}
+          placeholder="Tags"
+          className="w-full border border-gray-500/20 p-2"
+        />
 
-      </div>
-
-      <input
-        name="tags"
-        value={task.tags}
-        onChange={handleChange}
-        placeholder="Tags"
-        className="w-full border border-gray-500/20 p-2"
-      />
-
-      <button className="w-full bg-green-500 text-white p-2">
-        {editTask ? "Update Task" : "Create Task"}
-      </button>
-    </form>
+        <button className="w-full bg-green-500 text-white p-2">
+          {editTask ? "Update Task" : "Create Task"}
+        </button>
+      </form>
+    </div>
   );
 };
 
